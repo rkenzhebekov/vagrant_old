@@ -1,4 +1,5 @@
 file = File.new("QuickSort.txt", "r")
+# file = File.new("100.txt", "r")
 arr = []
 while (line = file.gets)
   arr << line.to_i
@@ -13,6 +14,7 @@ class Sorting
 
   def quicksort(arr, low, high)
     if low < high
+      # swap(arr, high, low)
       p = partition(arr, low, high)
       quicksort(arr, low, p - 1)
       quicksort(arr, p + 1, high)
@@ -40,8 +42,10 @@ class Sorting
   end
 end
 
-arr = [3, 9, 8, 4, 6, 10, 2, 5, 7, 1]
+# arr = [3, 9, 8, 4, 6, 10, 2, 5, 7, 1]
 s = Sorting.new
 s.quicksort(arr, 0, arr.length - 1)
 p s.counter
 p arr
+
+# 162085
